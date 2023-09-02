@@ -1,6 +1,5 @@
 package org.example;
 
-import com.mysql.cj.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -9,7 +8,10 @@ public class Main {
     {
 
         System.out.println("Hello world!");
-        SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
+        Configuration configuration=new Configuration();
+        configuration.configure("/src/main/resources/hibernate.cfg.xml");
+        SessionFactory sessionFactory=configuration.buildSessionFactory();
+        System.out.println(sessionFactory);
 
     }
 }
