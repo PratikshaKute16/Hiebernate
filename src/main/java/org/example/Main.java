@@ -9,7 +9,7 @@ public class Main {
 
         System.out.println("Hello world!");
         Configuration configuration=new Configuration();
-        configuration.configure("/src/main/resources/hibernate.cfg.xml");
+        configuration.configure("hibernate.cfg.xml");
         SessionFactory sessionFactory=configuration.buildSessionFactory();
         System.out.println(sessionFactory);
 
