@@ -14,10 +14,9 @@ public class Main {
         configuration.configure("hibernate.cfg.xml");
         SessionFactory sessionFactory=configuration.buildSessionFactory();
         System.out.println(sessionFactory);
-        System.out.println(sessionFactory.isClosed());
 
         //creating student object
-        Student student=new Student();
+        Student12 student=new Student12();
         student.setId(101);
         student.setName("Pratiksha");
         student.setCity("Pune");
