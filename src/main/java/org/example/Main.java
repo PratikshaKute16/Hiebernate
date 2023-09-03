@@ -18,12 +18,12 @@ public class Main {
 //        creating emp object
 
         Emp emp=new Emp();
-        emp.setId(101);
-        emp.setName("pratiksha");
+        emp.setId(11);
+        emp.setName("Rudra");
         emp.setCity("Pune");
+        System.out.println(emp);
 
-
-        Session session= sessionFactory.getCurrentSession();
+        Session session= sessionFactory.openSession();
         Transaction tx=session.beginTransaction();
         session.save(emp);
         tx.commit();
