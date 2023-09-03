@@ -15,18 +15,17 @@ public class Main {
         SessionFactory sessionFactory=configuration.buildSessionFactory();
         System.out.println(sessionFactory);
 
-        //creating student object
-        Student12 student=new Student12();
-        student.setId(101);
-        student.setName("Pratiksha");
-        student.setCity("Pune");
-        System.out.println(student);
+//        creating emp object
+
+        Emp emp=new Emp();
+        emp.setId(101);
+        emp.setName("pratiksha");
+        emp.setCity("Pune");
 
 
         Session session= sessionFactory.getCurrentSession();
-
         Transaction tx=session.beginTransaction();
-        session.save(student);
+        session.save(emp);
         tx.commit();
         session.close();
 
