@@ -6,11 +6,12 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Date;
 
 public class Main {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws IOException {
 
         System.out.println("Hello world!");
         Configuration configuration=new Configuration();
@@ -37,7 +38,10 @@ public class Main {
         address.setX(121.45);
 
         //Reading imge
-        FileInputStream inputStream=new FileInputStream()
+        FileInputStream inputStream=new FileInputStream("src/main/resources/2.jpg");
+        byte[] bytes=new byte[inputStream.available()];
+        inputStream.read(bytes);
+         address.setImage(bytes);
         Session session= sessionFactory.openSession();
         Transaction tx=session.beginTransaction();
         session.save(emp);
