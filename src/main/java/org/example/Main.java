@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.io.FileInputStream;
 import java.util.Date;
 
 public class Main {
@@ -35,6 +36,8 @@ public class Main {
         address.setAddedDate(new Date());
         address.setX(121.45);
 
+        //Reading imge
+        FileInputStream inputStream=new FileInputStream()
         Session session= sessionFactory.openSession();
         Transaction tx=session.beginTransaction();
         session.save(emp);
