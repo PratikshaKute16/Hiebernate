@@ -42,6 +42,7 @@ public class Main {
         byte[] bytes=new byte[inputStream.available()];
         inputStream.read(bytes);
          address.setImage(bytes);
+
         Session session= sessionFactory.openSession();
         Transaction tx=session.beginTransaction();
         session.save(emp);
