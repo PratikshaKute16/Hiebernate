@@ -5,6 +5,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.util.Date;
+
 public class Main {
     public static void main(String[] args)
     {
@@ -23,9 +25,20 @@ public class Main {
         emp.setCity("Pune");
         System.out.println(emp);
 
+
+        //creating object of address
+        Address address=new Address();
+        address.setAddressId(106);
+        address.setStreet("Street1");
+        address.setCity("delhi");
+        address.setOpen(true);
+        address.setAddedDate(new Date());
+        address.setX(121.45);
+
         Session session= sessionFactory.openSession();
         Transaction tx=session.beginTransaction();
         session.save(emp);
+        session.save(address);
         tx.commit();
         session.close();
 
