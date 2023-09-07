@@ -9,7 +9,7 @@
         <property name="connection.username">root</property>
          <property name="connection.password">prati@123</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
-        <property name="hibernate.hbm2ddl.auto">create</property> <!--automatic create the table if table present it ll not create table--><property name="show_sql">true</property> <!--it ll show which query is running-->
+        <property name="hibernate.hbm2ddl.auto">update</property> <!--automatic create the table if table present it ll not create table--><property name="show_sql">true</property> <!--it ll show which query is running-->
         <property name="show_sql">true</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <mapping class="org.example.Emp"/>
