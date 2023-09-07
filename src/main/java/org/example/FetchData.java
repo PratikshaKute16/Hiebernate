@@ -14,7 +14,7 @@ public class FetchData
         SessionFactory factory =cfg.buildSessionFactory();
 
         Session  session=factory.openSession();
-        Address address=(Address)session.get(Address.class,1);
+        Address  address=(Address)session.get(Address.class,1);
 
        Emp emp=(Emp)session.load(Emp.class,11);
         System.out.println(emp);
