@@ -27,26 +27,31 @@ public class Main {
         emp.setCity("Pune");
         System.out.println(emp);
 
+        Courses courses=new Courses();
+        courses.setCourse("java");
+        courses.setDuration(2);
 
         //creating object of address
-        Address address=new Address();
-        address.setAddressId(106);
-        address.setStreet("Street1");
-        address.setCity("delhi");
-        address.setOpen(true);
-        address.setAddedDate(new Date());
-        address.setX(121.45);
+//        Address address=new Address();
+//        address.setAddressId(106);
+//        address.setStreet("Street1");
+//        address.setCity("delhi");
+//        address.setOpen(true);
+//        address.setAddedDate(new Date());
+//        address.setX(121.45);
 
         //Reading imge
-        FileInputStream inputStream=new FileInputStream("src/main/resources/2.jpg");
-        byte[] bytes=new byte[inputStream.available()];
-        inputStream.read(bytes);
-         address.setImage(bytes);
+//        FileInputStream inputStream=new FileInputStream("src/main/resources/2.jpg");
+//        byte[] bytes=new byte[inputStream.available()];
+//        inputStream.read(bytes);
+//         address.setImage(bytes);
 
         Session session= sessionFactory.openSession();
         Transaction tx=session.beginTransaction();
         session.save(emp);
-        session.save(address);
+        session.save(courses);
+//        session.save(emp);
+//        session.save(address);
         tx.commit();
         session.close();
 

@@ -4,13 +4,14 @@ import javax.persistence.*;
 import java.util.Arrays;
 import java.util.Date;
 
-@Entity
-@Table(name = "emp_address")
+//@Entity
+//@Table(name = "emp_address")
+@Embeddable
 public class Address
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "addreass_id")
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "addreass_id")
     private int addressId;
     @Column(length = 50,name = "STREET")
 
@@ -20,7 +21,7 @@ public class Address
     @Column(name="isOpen")
     private boolean isOpen;
 
-    @Transient
+    //@Transient
     private double x;
     @Column(name="add_date")
     @Temporal(TemporalType.DATE)

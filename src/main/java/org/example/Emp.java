@@ -7,12 +7,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "emp")
 
-public class Emp
-{
+public class Emp {
     @Id
     private int id;
     private String name;
-    private  String city;
+    private String city;
+    private Courses courses;
+
 
     public Emp() {
     }
@@ -21,6 +22,7 @@ public class Emp
         this.id = id;
         this.name = name;
         this.city = city;
+
     }
 
     public int getId() {
@@ -47,8 +49,20 @@ public class Emp
         this.city = city;
     }
 
+    public Courses getCourses() {
+        return courses;
+    }
+
+    public void setCourses() {
+        this.courses = courses;
+    }
+
     @Override
     public String toString() {
-        return this.id+":"+this.name+":"+this.city;
+        return "Emp{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", city='" + city + '\'' +
+                '}';
     }
 }
