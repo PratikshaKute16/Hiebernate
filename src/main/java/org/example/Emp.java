@@ -53,8 +53,8 @@ public class Emp {
         return courses;
     }
 
-    public void setCourses() {
-        this.courses = courses;
+    public void setCourses(Courses courses) {
+        this.courses = this.courses;
     }
 
     @Override

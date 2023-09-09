@@ -14,6 +14,6 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <mapping class="org.example.Emp"/>
         <mapping class="org.example.Address"/>
-        <mapping class="org.example.Courses"/>
+
     </session-factory>
 </hibernate-configuration>

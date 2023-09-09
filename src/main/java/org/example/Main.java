@@ -27,9 +27,11 @@ public class Main {
         emp.setCity("Pune");
         System.out.println(emp);
 
+        //creating object of courses
         Courses courses=new Courses();
         courses.setCourse("java");
         courses.setDuration(2);
+        emp.setCourses(courses);
 
         //creating object of address
 //        Address address=new Address();
