@@ -1,9 +1,7 @@
 package org.example.relationship;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Question 
@@ -12,16 +10,19 @@ public class Question
     @Column(name = "quest_Id")
     private int questId;
     private String question;
-    @OneToOne
-    private Answer answer;
+//    @OneToOne
+//    private Answer answer;
+
+    @OneToMany(mappedBy = "question")
+    private List<Answer> list;
 
     public Question() {
     }
 
-    public Question(int questId, String question, Answer answer) {
+    public Question(int questId, String question, List<Answer> list) {
         this.questId = questId;
         this.question = question;
-        this.answer = answer;
+        this.list = list;
     }
 
     public int getQuestId() {
@@ -40,11 +41,11 @@ public class Question
         this.question = question;
     }
 
-    public Answer getAnswer() {
-        return answer;
+    public List<Answer> getList() {
+        return list;
     }
 
-    public void setAnswer(Answer answer) {
-        this.answer = answer;
+    public void setList(List<Answer> list) {
+        this.list = list;
     }
 }
